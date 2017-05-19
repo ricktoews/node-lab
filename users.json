@@ -1,0 +1,8 @@
+[
+{ "name": {"first": "David", "last": "Natiuk" }, "username": "davidnatiuk", "address": { "street": "david's street", "city": "Battle Ground", "state": "WA", "zip": "96543" } },
+{ "name": {"first": "Rockford", "last": "Toews"}, "username": "rockt", "address": { "street": "rock's street", "city": "Annapolis", "state": "MD", "zip": "01433" } },
+{ "name": {"first": "Adam", "last": "Clemons"}, "username": "notsmauel", "address": { "street": "adam's street", "city": "Seattle", "state": "WA", "zip": "98121" } },
+{ "name": {"first": "Rhonda", "last": "Toews"}, "username": "pottery", "address": { "street": "rhonda's street", "city": "Reedley", "state": "CA", "zip": "93654" } },
+{ "name": {"first": "Elizabeth", "last": "Grimes"}, "username": "thejudge", "address": { "street": "elizabeth's street", "city": "Malibu", "state": "CA", "zip": "91212" } },
+{ "name": {"first": "Ronald", "last": "Toews"}, "username": "mogul", "address": { "street": "Birdview", "city": "Malibu", "state": "CA", "zip": "91212" } }
+]
