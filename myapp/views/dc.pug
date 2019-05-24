@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1= title
+
+  table(class="tri-nums")
+    thead
+      tr
+        th= "Fraction"
+        th= "Decimal Expansion"
+        th= "Length"
+        th= "Repeating"
+    tbody
+    each obj in rows
+      tr
+        td= obj.fraction
+        td= obj.decimal
+        td= obj.length
+        td= obj.repeating
+

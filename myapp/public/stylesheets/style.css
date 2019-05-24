@@ -1,0 +1,17 @@
+body {
+  padding: 10px;
+  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.tri-nums {
+  border-collapse: collapse;
+}
+
+.tri-nums td {
+  border-bottom: 1px solid black;
+  text-align: center;
+}

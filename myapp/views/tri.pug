@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+
+  table(class="tri-nums")
+    tbody
+    each val in tris
+      if val % 2
+        tr
+          td= val
+          td= val+1
+          td= val+2
+      else
+        tr
+          td(colspan="3")= val
