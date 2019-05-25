@@ -8,10 +8,16 @@ function tri(req, res, next) {
 
 function dc(req, res, next) {
   let toys = new MathToys;
-  toys.dc(req.params.denom).then(data => {
-    let rows = data;
-    res.render('dc', { title: 'Decimal Calculator', rows: rows });
-  });
+  // Get the denominator, or handle when there isn't one.
+  let denom = req.params.denom || null;
+  if (denom === null) {
+    res.render('dc', { title: 'Decimal Calculator', rows: [] });
+  } else {
+    toys.dc(denom).then(data => {
+      let rows = data;
+      res.render('dc', { title: 'Decimal Calculator', rows: rows });
+    });
+  }
 }
 
 const endpoints = {

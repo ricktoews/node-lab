@@ -1,0 +1,27 @@
+/*
+  styles for math pages. not enough to split them up.
+*/
+
+:root {
+  --numeric-input-width: 50px;
+}
+
+fieldset {
+  border: none;
+  background-color:#eee;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+/* denominator input */
+.denom-input label {
+  margin-right: 5px;
+}
+
+.denom-input input {
+  width: var(--numeric-input-width);
+}
+
+.denom-input button {
+  margin-left: 5px;
+}

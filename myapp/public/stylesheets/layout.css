@@ -1,0 +1,121 @@
+/*
+  Learned / rehearsed in the course of doing this:
+  * If an element is position:fixed, you need to specify the dimensions.
+  * The line-height property can be used to center text vertically: just set the line height to the element height.
+  * Syntax for variable declaration in vanilla CSS. (BTW, feels a bit too clunky for my taste.)
+  * @media
+*/
+/*
+  LAYOUT
+
+  For elements body, header, footer, nav, main
+  Really, nothing that's not going to apply to all pages should be in this file.
+*/
+
+/* Variable declaration */
+body {
+  --init-font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+  --init-margin: 0;
+}
+
+header {
+  --header-height: 30px;
+  --header-bg: black;
+  --header-text: white;
+}
+
+footer {
+  --footer-height: 30px;
+  --footer-bg: black;
+  --footer-text: white;
+}
+
+nav {
+  --nav-height: 30px;
+  --nav-vertical-margin: 4px;
+  --nav-border-radius: 6px;
+  --nav-bg: #09f;
+  --nav-text: white;
+  --nav-link: white;
+  --nav-hover-bg: #1f74ac;
+  --nav-hover-link: white;
+  --nav-padding: 0 10px;
+}
+
+:root {
+  --mobile-content-width: 100%;
+  --mobile-content-margin: 5px;
+  --standard-content-width: 80%;
+  --standard-content-margin: auto;
+}
+
+
+
+/* Style declarations */
+body {
+  font: var(--init-font);
+  margin: var(--init-margin);
+}
+
+/* header styles */
+header {
+  height: var(--header-height);
+  background: var(--header-bg);
+  line-height: var(--header-height);
+  color: white;
+  text-align: center;
+}
+
+/* footer styles */
+footer {
+  /* Hold footer to bottom of page. Position: fixed needs the width specified. */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: var(--footer-height);
+  background: var(--footer-bg);
+  line-height: var(--footer-height);
+  color: var(--footer-text);
+  text-align: center;
+}
+
+/* navigation styles */
+nav {
+  position:sticky;
+  top: 0;
+  height: var(--nav-height);
+  line-height: calc(var(--nav-height) - 2*var(--nav-vertical-margin));
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  text-align: center;
+}
+
+nav a {
+  display: inline-block;
+  padding: var(--nav-padding);
+  margin: var(--nav-vertical-margin) 0;
+  border-radius: var(--nav-border-radius);
+  color: var(--nav-link);
+  text-decoration: none;
+  background-color: var(--nav-hover-bg);
+}
+nav a:hover {
+  background-color: var(--nav-hover-bg);
+}
+
+/* main page content for mobile device. */
+@media (max-width: 480px) {
+  main {
+    width: var(--mobile-content-width);
+    margin: var(--mobile-content-margin);
+  }
+}
+
+/* main page content for laptop / desktop. */
+@media (min-width: 481px) {
+  main {
+    width: var(--standard-content-width);
+    margin: var(--standard-content-margin);
+  }
+}
+

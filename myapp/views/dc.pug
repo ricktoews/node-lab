@@ -1,20 +1,33 @@
 extends layout
 
 block content
-  h1= title
 
-  table(class="tri-nums")
-    thead
-      tr
-        th= "Fraction"
-        th= "Decimal Expansion"
-        th= "Length"
-        th= "Repeating"
-    tbody
-    each obj in rows
-      tr
-        td= obj.fraction
-        td= obj.decimal
-        td= obj.length
-        td= obj.repeating
+  include ../views/header.pug
 
+  main
+
+    fieldset(class="denom-input")
+      label(for="denom") Denominator
+      input(type="text" id="denom")
+      button(type="text" class="calculate") Calculate
+
+    if rows.length > 0
+      table(class="tri-nums")
+        thead
+          tr
+            th= "Fraction"
+            th= "Decimal Expansion"
+            th= "Length"
+            th= "Repeating"
+        tbody
+        each obj in rows
+          tr
+            td= obj.fraction
+            td= '.' + obj.decimal
+            td= obj.length
+            td= obj.repeating
+
+  include ../views/footer.pug
+
+  script(type="module") import addHandler from "/javascripts/dc.js";
+    | addHandler('.denom-input button')

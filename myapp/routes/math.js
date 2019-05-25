@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/tri', endpoints.tri);
 
+router.get('/dc', endpoints.dc);
 router.get('/dc/:denom', endpoints.dc);
 
 module.exports = router;

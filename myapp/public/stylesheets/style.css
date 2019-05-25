@@ -1,10 +1,12 @@
-body {
-  padding: 10px;
-  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+@import "./layout.css";
+@import "./math.css";
 
 a {
   color: #00B7FF;
+}
+
+table {
+  width: 100%;
 }
 
 .tri-nums {
