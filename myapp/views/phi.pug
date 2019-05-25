@@ -1,0 +1,36 @@
+extends layout
+
+block content
+
+  include ../views/header.pug
+
+  main
+
+    fieldset(class="phi-input")
+      label(for="phi-rows") How many phi rows?
+      input(type="text" id="phi-rows")
+      button(type="text" class="calculate") Calculate
+
+    if rows.length > 0
+      table(class="tri-nums")
+        thead
+          tr
+            th= "Power"
+            th= "Phi^n"
+            th= "Variant"
+            th= "Approx"
+            th= "Fibonacci"
+        tbody
+        each obj in rows
+          tr
+            td= obj.power
+            td= `(${obj.phi_num.whole} + ${obj.phi_num.sqrt_5_coef}√5) / 2`
+            td= obj.variant
+            td= obj.fib_approx
+            td= obj.sqrt_5_coef
+
+  include ../views/footer.pug
+
+  script(type="module") import addHandler from "/javascripts/phi.js";
+    | addHandler('.phi-input button')
+

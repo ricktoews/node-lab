@@ -1,7 +1,8 @@
 var axios = require('axios');
 
 const API = {
-  dc: 'http://arithmo-rest.toewsweb.net/dc/'
+  dc: 'http://arithmo-rest.toewsweb.net/dc/',
+  phi: 'http://arithmo-rest.toewsweb.net/phi/powers/'
 }
 
 class MathToys {
@@ -22,9 +23,21 @@ class MathToys {
     })
     .catch(error => {
       let res = error.response;
-  	let status = res && res.status;
-  	return res.status;
+      let status = res && res.status;
+      return res.status;
     });
+  }
+
+  phi(n) {
+    let url = API.phi + n;
+	return axios.get(url).then(res => {
+      return res.data;
+	})
+	.catch(error => {
+      let res = error.response;
+      let status = res && res.status;
+      return res.status;
+	});
   }
 }
 

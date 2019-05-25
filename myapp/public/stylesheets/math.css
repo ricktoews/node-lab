@@ -25,3 +25,17 @@ fieldset {
 .denom-input button {
   margin-left: 5px;
 }
+
+/* phi powers input */
+.phi-input label {
+  margin-right: 5px;
+}
+
+.phi-input input {
+  width: var(--numeric-input-width);
+}
+
+.phi-input button {
+  margin-left: 5px;
+}
+
